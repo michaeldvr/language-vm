@@ -15,7 +15,7 @@ pub enum Opcode {
   LT,   // less than
   GTQ,  // greater than or equal to
   LTQ,  // less than or equal to
-  JEQ,  // jump if equal
+  JEQ,  // jump if equal (from previous comparison)
   IGL,  // illegal
 }
 
