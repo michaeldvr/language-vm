@@ -2,11 +2,11 @@ use crate::instruction::Opcode;
 
 pub struct VM {
   // Array that simulates having hardware registers
-  registers: [i32; 32],
+  pub registers: [i32; 32],
   // Program counter that tracks which byte is being executed
   pc: usize,
   // The bytecode of the program being run
-  program: Vec<u8>,
+  pub program: Vec<u8>,
   // Contains remainder of module division ops
   remainder: u32,
   // Contains the result of the last comparison ops
@@ -135,6 +135,10 @@ impl VM {
       }
     }
     false
+  }
+
+  pub fn add_byte(&mut self, byte: u8) {
+    self.program.push(byte);
   }
 
   pub fn get_test_vm() -> VM {
